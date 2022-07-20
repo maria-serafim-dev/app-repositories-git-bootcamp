@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
+import com.bumptech.glide.Glide
 import com.example.portfoliogithub.R
 import com.example.portfoliogithub.core.createDialog
 import com.example.portfoliogithub.core.createProgressDialog
@@ -26,6 +27,11 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         setSupportActionBar(binding.toolbar)
         binding.rvRepos.adapter = adapter
 
+        observeChanges()
+
+    }
+
+    private fun observeChanges() {
         viewModel.repos.observe(this) {
             when (it) {
                 MainViewModel.State.Loading -> dialog.show()
@@ -37,6 +43,8 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
                 }
                 is MainViewModel.State.Success -> {
                     dialog.dismiss()
+                    binding.tvNameOwner.text = it.list[0].owner.login
+                    Glide.with(this).load(it.list[0].owner.avatarURL).circleCrop().into(binding.ivOwner)
                     adapter.submitList(it.list)
                 }
             }

@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">PortfolioGitHub</string>
     <string name="txt_label_search">Pesquisar</string>
+    <string name="cd_image_owner">Imagem do proprietário do repositório</string>
 </resources>
