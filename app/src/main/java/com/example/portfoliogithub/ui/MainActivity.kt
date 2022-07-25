@@ -1,7 +1,5 @@
 package com.example.portfoliogithub.ui
 
-import android.app.SearchManager
-import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
@@ -34,6 +32,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
         observeChanges()
         setTapTarget()
+        viewModel.getRepoList("maria-serafim-dev")
 
     }
 
@@ -58,7 +57,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
                 }
                 is MainViewModel.State.Success -> {
                     dialog.dismiss()
-                    binding.tvNameOwner.text = it.list[0].owner.login
+                    binding.tvUserNameOwner.text = it.list[0].owner.login
                     Glide.with(this).load(it.list[0].owner.avatarURL).circleCrop().into(binding.ivOwner)
                     adapter.submitList(it.list)
                 }

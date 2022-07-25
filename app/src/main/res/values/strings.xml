@@ -5,4 +5,6 @@
     <string name="txt_title_tap_target">Buscar um usuário do GitHub</string>
     <string name="txt_description_tap_target">Para buscar os repositórios de um usuário do GitHub, clique na lupa e digite o username</string>
     <string name="search_hint">Buscar usuário</string>
+    <string name="text_open_profile">Abrir perfil</string>
+    <string name="text_name">Maria Aparecida Serafim Bezerra</string>
 </resources>

@@ -12,14 +12,6 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <!--<androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/ivOwner"
-            android:layout_width="90dp"
-            android:layout_height="90dp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            tools:srcCompat="@tools:sample/avatars" />-->
-
         <com.google.android.material.textview.MaterialTextView
             android:id="@+id/tvRepoName"
             android:layout_width="0dp"
@@ -52,7 +44,7 @@
             android:layout_height="30dp"
             app:chipBackgroundColor="@color/white"
             app:chipIcon="@drawable/ic_star"
-            app:chipIconTint="@color/black"
+            app:chipIconTint="@color/secondaryColor"
             app:layout_constraintStart_toStartOf="@id/tvRepoName"
             app:layout_constraintTop_toBottomOf="@id/tvRepoDescription"
             tools:text="0" />
