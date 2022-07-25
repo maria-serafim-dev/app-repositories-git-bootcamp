@@ -9,7 +9,6 @@ import com.example.portfoliogithub.data.model.User
 import com.example.portfoliogithub.domain.ListUserRepositoriesUseCase
 import com.example.portfoliogithub.domain.ListUserUseCase
 import kotlinx.coroutines.flow.catch
-import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch
 
