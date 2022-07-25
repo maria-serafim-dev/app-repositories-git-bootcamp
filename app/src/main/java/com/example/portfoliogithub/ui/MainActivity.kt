@@ -11,7 +11,10 @@ import com.example.portfoliogithub.core.createProgressDialog
 import com.example.portfoliogithub.core.hideSoftKeyboard
 import com.example.portfoliogithub.databinding.ActivityMainBinding
 import com.example.portfoliogithub.presentation.MainViewModel
+import com.getkeepsafe.taptargetview.TapTarget
+import com.getkeepsafe.taptargetview.TapTargetView
 import org.koin.androidx.viewmodel.ext.android.viewModel
+
 
 class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
@@ -28,7 +31,17 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         binding.rvRepos.adapter = adapter
 
         observeChanges()
+        setTapTarget()
 
+    }
+
+    private fun setTapTarget() {
+        TapTargetView.showFor(this,
+            TapTarget.forToolbarMenuItem(
+                binding.toolbar, R.id.action_search,
+                getString(R.string.txt_title_tap_target),
+                getString(R.string.txt_description_tap_target)
+            ))
     }
 
     private fun observeChanges() {
@@ -51,7 +64,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         }
     }
 
-    override fun onCreateOptionsMenu(menu: Menu): Boolean {
+   override fun onCreateOptionsMenu(menu: Menu): Boolean {
         menuInflater.inflate(R.menu.main_menu, menu)
         val searchView = menu.findItem(R.id.action_search).actionView as SearchView
         searchView.setOnQueryTextListener(this)

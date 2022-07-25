@@ -2,4 +2,6 @@
     <string name="app_name">PortfolioGitHub</string>
     <string name="txt_label_search">Pesquisar</string>
     <string name="cd_image_owner">Imagem do proprietário do repositório</string>
+    <string name="txt_title_tap_target">Buscar um usuário do GitHub</string>
+    <string name="txt_description_tap_target">Para buscar os repositórios de um usuário do GitHub, clique na lupa e digite o username</string>
 </resources>

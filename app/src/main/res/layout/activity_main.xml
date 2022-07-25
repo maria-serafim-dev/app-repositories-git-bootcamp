@@ -15,7 +15,6 @@
         app:menu="@menu/main_menu"
         app:title="@string/app_name" />
 
-
     <ImageView
         android:id="@+id/ivOwner"
         android:layout_width="100dp"
@@ -25,8 +24,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/toolbar"
         android:contentDescription="@string/cd_image_owner"
-        tools:srcCompat="@tools:sample/avatars"
-        />
+        tools:srcCompat="@tools:sample/avatars" />
 
     <TextView
         android:id="@+id/tvNameOwner"
@@ -36,7 +34,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/ivOwner"
         android:textSize="20sp"
-        tools:text="maria-serafim-dev"/>
+        tools:text="maria-serafim-dev" />
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRepos"
@@ -50,6 +48,5 @@
         app:layout_constraintTop_toBottomOf="@id/tvNameOwner"
         tools:itemCount="5"
         tools:listitem="@layout/item_repo" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
