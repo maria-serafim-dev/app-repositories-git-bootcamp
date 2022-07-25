@@ -39,7 +39,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@id/ivOwner"
         app:layout_constraintTop_toTopOf="@id/ivOwner"
-        android:text="@string/text_name" />
+        tools:text="@string/text_name" />
 
     <TextView
         android:id="@+id/tvUserNameOwner"

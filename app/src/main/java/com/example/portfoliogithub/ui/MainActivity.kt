@@ -1,5 +1,7 @@
 package com.example.portfoliogithub.ui
 
+import android.content.Intent
+import android.net.Uri
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
@@ -30,7 +32,8 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         setSupportActionBar(binding.toolbar)
         binding.rvRepos.adapter = adapter
 
-        observeChanges()
+        observeChangesUser()
+        observeChangesRepo()
         setTapTarget()
         viewModel.getRepoList("maria-serafim-dev")
 
@@ -45,7 +48,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
             ))
     }
 
-    private fun observeChanges() {
+    private fun observeChangesRepo() {
         viewModel.repos.observe(this) {
             when (it) {
                 MainViewModel.State.Loading -> dialog.show()
@@ -57,12 +60,40 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
                 }
                 is MainViewModel.State.Success -> {
                     dialog.dismiss()
-                    binding.tvUserNameOwner.text = it.list[0].owner.login
-                    Glide.with(this).load(it.list[0].owner.avatarURL).circleCrop().into(binding.ivOwner)
                     adapter.submitList(it.list)
                 }
             }
         }
+    }
+
+    private fun observeChangesUser() {
+        viewModel.user.observe(this){
+            when (it) {
+                MainViewModel.StateUser.Loading -> dialog.show()
+                is MainViewModel.StateUser.Error -> {
+                    createDialog {
+                        setMessage(it.error.message)
+                    }.show()
+                    dialog.dismiss()
+                }
+                is MainViewModel.StateUser.Success -> {
+                    dialog.dismiss()
+                    binding.tvNameOwner.text = it.user.name
+                    binding.tvUserNameOwner.text = it.user.login
+                    Glide.with(this).load(it.user.avatarURL).circleCrop().into(binding.ivOwner)
+                    binding.btn.setOnClickListener{ _ ->
+                        clickRepository(it.user.htmlURL)
+                    }
+                }
+            }
+        }
+    }
+
+
+    private fun clickRepository(htmlURL: String){
+        val uri = Uri.parse(htmlURL)
+        val intent = Intent(Intent.ACTION_VIEW, uri)
+        startActivity(intent)
     }
 
    override fun onCreateOptionsMenu(menu: Menu): Boolean {

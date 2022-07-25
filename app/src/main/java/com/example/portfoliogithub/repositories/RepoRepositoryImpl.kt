@@ -12,7 +12,16 @@ class RepoRepositoryImpl(private val service: GitHubService) : RepoRepository{
            val repoList = service.listRepositories(user)
            emit(repoList)
        }catch (ex: HttpException) {
-           throw RemoteException(ex.message ?: "Não foi possível faazer a bsca no momento")
+           throw RemoteException(ex.message ?: "Não foi possível fazer a busca no momento")
        }
+    }
+
+    override suspend fun listUser(user: String) = flow {
+        try{
+            val repoList = service.listUser(user)
+            emit(repoList)
+        }catch (ex: HttpException) {
+            throw RemoteException(ex.message ?: "Não foi possível fazer a busca no momento")
+        }
     }
 }
