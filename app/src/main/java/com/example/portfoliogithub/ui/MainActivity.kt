@@ -1,5 +1,7 @@
 package com.example.portfoliogithub.ui
 
+import android.app.SearchManager
+import android.content.Context
 import android.os.Bundle
 import android.view.Menu
 import androidx.appcompat.app.AppCompatActivity
@@ -65,11 +67,12 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
    override fun onCreateOptionsMenu(menu: Menu): Boolean {
-        menuInflater.inflate(R.menu.main_menu, menu)
-        val searchView = menu.findItem(R.id.action_search).actionView as SearchView
-        searchView.setOnQueryTextListener(this)
-        return super.onCreateOptionsMenu(menu)
-    }
+       menuInflater.inflate(R.menu.main_menu, menu)
+       val searchView = menu.findItem(R.id.action_search).actionView as SearchView
+       searchView.setOnQueryTextListener(this)
+       searchView.queryHint = "Digite um username"
+           return super.onCreateOptionsMenu(menu)
+   }
 
     override fun onQueryTextSubmit(query: String?): Boolean {
         query?.let { viewModel.getRepoList(it) }

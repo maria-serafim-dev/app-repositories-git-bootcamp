@@ -10,10 +10,12 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="@color/primaryColor"
+        app:menu="@menu/main_menu"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:menu="@menu/main_menu"
-        app:title="@string/app_name" />
+        app:title="@string/app_name"
+        app:titleTextColor="@color/white"/>
 
     <ImageView
         android:id="@+id/ivOwner"
