@@ -1,10 +1,11 @@
 <resources>
     <string name="app_name">PortfolioGitHub</string>
-    <string name="txt_label_search">Pesquisar</string>
-    <string name="cd_image_owner">Imagem do proprietário do repositório</string>
-    <string name="txt_title_tap_target">Buscar um usuário do GitHub</string>
-    <string name="txt_description_tap_target">Para buscar os repositórios de um usuário do GitHub, clique na lupa e digite o username</string>
-    <string name="search_hint">Buscar usuário</string>
-    <string name="text_open_profile">Abrir perfil</string>
-    <string name="text_name">Maria Aparecida Serafim Bezerra</string>
+    <string name="txt_label_search"> Search </string>
+    <string name="cd_image_owner"> Repository Owner Image </string>
+    <string name="txt_title_tap_target"> Search a user from GitHub </string>
+    <string name="txt_description_tap_target"> To search a user\'s GitHub repositories, click the magnifying glass and type the username </string>
+    <string name="search_hint"> Search User </string>
+    <string name="text_open_profile"> Open Profile </string>
+    <string name="text_name"> Maria Aparecida Serafim Bezerra </string>
+    <string name="text_search_descrption">Enter a username</string>
 </resources>

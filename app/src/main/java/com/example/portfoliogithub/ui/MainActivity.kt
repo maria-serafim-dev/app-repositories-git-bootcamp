@@ -100,7 +100,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
        menuInflater.inflate(R.menu.main_menu, menu)
        val searchView = menu.findItem(R.id.action_search).actionView as SearchView
        searchView.setOnQueryTextListener(this)
-       searchView.queryHint = "Digite um username"
+       searchView.queryHint = getString(R.string.text_search_descrption)
            return super.onCreateOptionsMenu(menu)
    }
 
