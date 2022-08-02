@@ -15,6 +15,7 @@ import com.example.portfoliogithub.databinding.ActivityMainBinding
 import com.example.portfoliogithub.presentation.MainViewModel
 import com.getkeepsafe.taptargetview.TapTarget
 import com.getkeepsafe.taptargetview.TapTargetView
+import org.koin.android.ext.android.inject
 import org.koin.androidx.viewmodel.ext.android.viewModel
 
 
@@ -23,7 +24,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     private val dialog by lazy { createProgressDialog() }
     private val binding by lazy { ActivityMainBinding.inflate(layoutInflater) }
     private val viewModel by viewModel<MainViewModel>()
-    private val adapter by lazy { RepoListAdapter() }
+    private val adapter by inject<RepoListAdapter>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

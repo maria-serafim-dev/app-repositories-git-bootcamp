@@ -1,6 +1,7 @@
 package com.example.portfoliogithub.presentation.di
 
 import com.example.portfoliogithub.presentation.MainViewModel
+import com.example.portfoliogithub.ui.RepoListAdapter
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module
@@ -10,7 +11,7 @@ object PresentationModule {
 
 
     fun load() {
-        loadKoinModules(viewModelModule())
+        loadKoinModules(viewModelModule() + adapterModule())
     }
 
 
@@ -18,6 +19,14 @@ object PresentationModule {
         return module {
             viewModel {
                 MainViewModel(get(), get())
+            }
+        }
+    }
+
+    private fun adapterModule() : Module{
+        return module {
+            factory {
+                RepoListAdapter()
             }
         }
     }
