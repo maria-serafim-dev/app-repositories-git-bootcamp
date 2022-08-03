@@ -64,6 +64,7 @@ dependencies {
     implementation Glide.core
 
     implementation TapTargetView.core
+    implementation Shimmer.core
 
 
 }

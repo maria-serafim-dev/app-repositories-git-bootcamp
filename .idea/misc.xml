@@ -3,6 +3,11 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/AppCodeLabs/AppsBootcamp/PortfolioGitHub/app/src/main/res/drawable/ic_star.xml" value="0.256" />
+        <entry key="..\:/AppCodeLabs/AppsBootcamp/PortfolioGitHub/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/AppCodeLabs/AppsBootcamp/PortfolioGitHub/app/src/main/res/layout/item_repo.xml" value="0.25" />
+        <entry key="..\:/AppCodeLabs/AppsBootcamp/PortfolioGitHub/app/src/main/res/layout/item_repo_placeholder.xml" value="0.408203125" />
+        <entry key="..\:/AppCodeLabs/AppsBootcamp/PortfolioGitHub/app/src/main/res/layout/item_user_placeholder.xml" value="0.5" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/PortfolioGitHub/app/src/main/res/drawable/ic_search.xml" value="0.236" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/PortfolioGitHub/app/src/main/res/layout/activity_main.xml" value="0.31179775280898875" />
         <entry key="..\:/Users/Maria/AndroidStudioProjects/PortfolioGitHub/app/src/main/res/layout/item_repo.xml" value="0.2765957446808511" />

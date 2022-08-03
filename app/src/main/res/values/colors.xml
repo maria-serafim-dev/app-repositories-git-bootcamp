@@ -14,4 +14,5 @@
     <color name="secondaryLightColor">#f9683a</color>
     <color name="secondaryDarkColor">#870000</color>
     <color name="primaryTextColor">#ffffff</color>
+    <color name="background_view_placeholder">#DDDDDD</color>
 </resources>

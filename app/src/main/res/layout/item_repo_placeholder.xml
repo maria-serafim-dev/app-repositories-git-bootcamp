@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    app:cardCornerRadius="@dimen/layout_half_padding"
+    app:cardElevation="@dimen/layout_half_padding"
+    app:cardUseCompatPadding="true">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <View
+            android:id="@+id/tvRepoName"
+            android:layout_width="match_parent"
+            android:layout_height="16dp"
+            android:layout_marginTop="@dimen/layout_half_padding"
+            android:layout_marginStart="@dimen/layout_half_padding"
+            android:layout_marginEnd="@dimen/layout_half_padding"
+            android:background="@color/background_view_placeholder"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.1"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <View
+            android:id="@+id/tvRepoDescription"
+            android:layout_width="200dp"
+            android:layout_height="16dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/tvRepoName"
+            app:layout_constraintTop_toBottomOf="@id/tvRepoName"
+            app:layout_constraintVertical_bias="0.0"
+            android:background="@color/background_view_placeholder"
+            android:layout_marginTop="6dp"/>
+
+        <ImageView
+            android:id="@+id/cpStar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/ic_star"
+            app:layout_constraintStart_toStartOf="@id/tvRepoDescription"
+            app:layout_constraintTop_toBottomOf="@id/tvRepoDescription" />
+
+        <View
+            android:id="@+id/cpStarText"
+            android:layout_width="32dp"
+            android:layout_height="16dp"
+            android:layout_marginEnd="@dimen/layout_half_padding"
+            app:layout_constraintStart_toEndOf="@id/cpStar"
+            app:layout_constraintTop_toTopOf="@id/cpStar"
+            app:layout_constraintBottom_toBottomOf="@id/cpStar"
+            android:background="@color/background_view_placeholder"/>
+
+        <View
+            android:id="@+id/tvRepoLanguage"
+            android:layout_width="64dp"
+            android:layout_height="16dp"
+            android:ellipsize="end"
+            android:maxLines="2"
+            android:layout_marginEnd="@dimen/layout_half_padding"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@id/cpStar"
+            app:layout_constraintBottom_toBottomOf="@id/cpStar"
+            android:background="@color/background_view_placeholder"/>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>
