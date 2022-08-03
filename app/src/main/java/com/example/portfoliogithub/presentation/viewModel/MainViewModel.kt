@@ -1,4 +1,4 @@
-package com.example.portfoliogithub.presentation
+package com.example.portfoliogithub.presentation.viewModel
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
@@ -6,8 +6,8 @@ import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.portfoliogithub.data.model.Repo
 import com.example.portfoliogithub.data.model.User
-import com.example.portfoliogithub.domain.ListUserRepositoriesUseCase
-import com.example.portfoliogithub.domain.ListUserUseCase
+import com.example.portfoliogithub.domain.useCase.ListUserRepositoriesUseCase
+import com.example.portfoliogithub.domain.useCase.ListUserUseCase
 import kotlinx.coroutines.flow.catch
 import kotlinx.coroutines.flow.onStart
 import kotlinx.coroutines.launch

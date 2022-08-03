@@ -1,4 +1,4 @@
-package com.example.portfoliogithub.ui
+package com.example.portfoliogithub.presentation.ui
 
 import android.content.Intent
 import android.net.Uri
@@ -12,7 +12,7 @@ import com.example.portfoliogithub.core.createDialog
 import com.example.portfoliogithub.core.createProgressDialog
 import com.example.portfoliogithub.core.hideSoftKeyboard
 import com.example.portfoliogithub.databinding.ActivityMainBinding
-import com.example.portfoliogithub.presentation.MainViewModel
+import com.example.portfoliogithub.presentation.viewModel.MainViewModel
 import com.getkeepsafe.taptargetview.TapTarget
 import com.getkeepsafe.taptargetview.TapTargetView
 import org.koin.android.ext.android.inject

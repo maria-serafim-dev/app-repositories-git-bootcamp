@@ -1,4 +1,4 @@
-package com.example.portfoliogithub.ui
+package com.example.portfoliogithub.presentation.ui
 
 import android.content.Context
 import android.content.Intent

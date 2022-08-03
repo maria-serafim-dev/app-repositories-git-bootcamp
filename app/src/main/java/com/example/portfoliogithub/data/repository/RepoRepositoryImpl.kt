@@ -1,11 +1,12 @@
-package com.example.portfoliogithub.repositories
+package com.example.portfoliogithub.data.repository
 
 import com.example.portfoliogithub.core.RemoteException
-import com.example.portfoliogithub.services.GitHubService
+import com.example.portfoliogithub.domain.repository.RepoRepository
+import com.example.portfoliogithub.data.services.GitHubService
 import kotlinx.coroutines.flow.flow
 import retrofit2.HttpException
 
-class RepoRepositoryImpl(private val service: GitHubService) : RepoRepository{
+class RepoRepositoryImpl(private val service: GitHubService) : RepoRepository {
 
     override suspend fun listRepositories(user: String) = flow{
        try{

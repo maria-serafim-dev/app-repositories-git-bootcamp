@@ -1,8 +1,8 @@
-package com.example.portfoliogithub.domain
+package com.example.portfoliogithub.domain.useCase
 
 import com.example.portfoliogithub.core.UseCase
 import com.example.portfoliogithub.data.model.Repo
-import com.example.portfoliogithub.repositories.RepoRepository
+import com.example.portfoliogithub.domain.repository.RepoRepository
 import kotlinx.coroutines.flow.Flow
 
 class ListUserRepositoriesUseCase(private val repository: RepoRepository) : UseCase<String, List<Repo>>() {

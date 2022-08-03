@@ -1,7 +1,7 @@
 package com.example.portfoliogithub.presentation.di
 
-import com.example.portfoliogithub.presentation.MainViewModel
-import com.example.portfoliogithub.ui.RepoListAdapter
+import com.example.portfoliogithub.presentation.viewModel.MainViewModel
+import com.example.portfoliogithub.presentation.ui.RepoListAdapter
 import org.koin.androidx.viewmodel.dsl.viewModel
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module

@@ -1,4 +1,4 @@
-package com.example.portfoliogithub.repositories
+package com.example.portfoliogithub.domain.repository
 
 import com.example.portfoliogithub.data.model.Repo
 import com.example.portfoliogithub.data.model.User
