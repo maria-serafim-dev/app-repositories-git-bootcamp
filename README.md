@@ -2,7 +2,11 @@
 
 
 Aplicativo para buscas de usuários do GitHub e seu repositório - Bootcamp Santander
-                  
+                
+<div align="center">
+<img src="https://user-images.githubusercontent.com/100223091/182982428-30844040-4071-46f3-af1f-c0485efa8bb2.gif"  />
+</div>
+
 
 # Técnicas e Tecnologias
 
