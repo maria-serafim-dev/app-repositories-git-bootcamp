@@ -32,7 +32,6 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
         setSupportActionBar(binding.toolbar)
         binding.rvRepos.adapter = adapter
 
-        observeChangesUser()
         observeChangesRepo()
         setTapTarget()
         viewModel.getRepoList("maria-serafim-dev")
@@ -49,7 +48,7 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
     }
 
     private fun observeChangesRepo() {
-        viewModel.repos.observe(this) {
+        viewModel.listWithRepo.observe(this) {
             when (it) {
                 MainViewModel.State.Loading -> startShimmer()
                 is MainViewModel.State.Error -> {
@@ -60,35 +59,17 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
                 }
                 is MainViewModel.State.Success -> {
                     stopShimmer()
-                    adapter.submitList(it.list)
-                }
-            }
-        }
-    }
-
-    private fun observeChangesUser() {
-        viewModel.user.observe(this){
-            when (it) {
-                MainViewModel.StateUser.Loading -> startShimmer()
-                is MainViewModel.StateUser.Error -> {
-                    createDialog {
-                        setMessage(it.error.message)
-                    }.show()
-                    stopShimmer()
-                }
-                is MainViewModel.StateUser.Success -> {
-                    stopShimmer()
-                    binding.tvNameOwner.text = it.user.name
-                    binding.tvUserNameOwner.text = it.user.login
-                    Glide.with(this).load(it.user.avatarURL).circleCrop().into(binding.ivOwner)
+                    adapter.submitList(it.repoWithOwner.listRepo)
+                    binding.tvNameOwner.text = it.repoWithOwner.owner.name
+                    binding.tvUserNameOwner.text = it.repoWithOwner.owner.login
+                    Glide.with(this).load(it.repoWithOwner.owner.avatarURL).circleCrop().into(binding.ivOwner)
                     binding.btn.setOnClickListener{ _ ->
-                        clickRepository(it.user.htmlURL)
+                        clickRepository(it.repoWithOwner.owner.htmlURL)
                     }
                 }
             }
         }
     }
-
 
     private fun clickRepository(htmlURL: String){
         val uri = Uri.parse(htmlURL)
@@ -112,10 +93,6 @@ class MainActivity : AppCompatActivity(), SearchView.OnQueryTextListener {
 
     override fun onQueryTextChange(newText: String?): Boolean {
         return true
-    }
-
-    companion object {
-        private const val TAG = "TAG"
     }
 
     private fun stopShimmer() {

@@ -3,7 +3,9 @@ package com.example.portfoliogithub.data.di
 import android.util.Log
 import com.example.portfoliogithub.domain.repository.RepoRepository
 import com.example.portfoliogithub.data.repository.RepoRepositoryImpl
+import com.example.portfoliogithub.data.repository.UserRepositoryImpl
 import com.example.portfoliogithub.data.services.GitHubService
+import com.example.portfoliogithub.domain.repository.UserRepository
 import com.google.gson.GsonBuilder
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -48,6 +50,9 @@ object DataModule {
         return  module {
             single<RepoRepository> {
                 RepoRepositoryImpl(get())
+            }
+            single<UserRepository> {
+                UserRepositoryImpl(get())
             }
         }
     }

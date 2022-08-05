@@ -18,7 +18,7 @@ object PresentationModule {
     private fun viewModelModule(): Module {
         return module {
             viewModel {
-                MainViewModel(get(), get())
+                MainViewModel(get())
             }
         }
     }
