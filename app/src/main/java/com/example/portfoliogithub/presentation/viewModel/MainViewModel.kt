@@ -24,9 +24,9 @@ class MainViewModel(private val listUserRepositoriesUseCase: ListUserRepositorie
                 .catch {
                     _listWithRepo.postValue(State.Error(it))
                 }
-                .collect {
-                    _listWithRepo.postValue(State.Success(it))
-                }
+                .collect{
+                _listWithRepo.postValue(State.Success(it))
+            }
         }
     }
 

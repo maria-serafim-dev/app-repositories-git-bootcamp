@@ -1,5 +1,6 @@
 package com.example.portfoliogithub.presentation.di
 
+import com.example.portfoliogithub.domain.useCase.ListUserRepositoriesUseCaseImpl
 import com.example.portfoliogithub.presentation.viewModel.MainViewModel
 import com.example.portfoliogithub.presentation.ui.RepoListAdapter
 import org.koin.androidx.viewmodel.dsl.viewModel
@@ -18,7 +19,7 @@ object PresentationModule {
     private fun viewModelModule(): Module {
         return module {
             viewModel {
-                MainViewModel(get())
+                MainViewModel(get<ListUserRepositoriesUseCaseImpl>())
             }
         }
     }

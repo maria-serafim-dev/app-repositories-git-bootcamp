@@ -1,6 +1,6 @@
 package com.example.portfoliogithub.domain.di
 
-import com.example.portfoliogithub.domain.useCase.ListUserRepositoriesUseCase
+import com.example.portfoliogithub.domain.useCase.ListUserRepositoriesUseCaseImpl
 import org.koin.core.context.loadKoinModules
 import org.koin.core.module.Module
 import org.koin.dsl.module
@@ -15,7 +15,7 @@ object DomainModule {
     private fun useCaseModule(): Module{
         return module {
             factory {
-                ListUserRepositoriesUseCase(get(), get())
+                ListUserRepositoriesUseCaseImpl(get(), get())
             }
         }
     }
