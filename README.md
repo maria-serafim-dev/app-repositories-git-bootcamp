@@ -1,4 +1,4 @@
-# Portfólio Gitub
+# Portfólio GitHub
 
 
 Aplicativo para buscas de usuários do GitHub e seus repositórios - Bootcamp Santander
